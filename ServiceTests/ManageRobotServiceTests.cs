@@ -22,7 +22,7 @@ namespace MartianRobot.Service.Tests
             _file = new Mock<IFile>();
             _file.Setup(f => f.GetFile()).Returns(list);
             service = new ManageRobotService(_file.Object);
-            Assert.ThrowsException<Exception>(() => service.ReadSetUpFile());
+            Assert.ThrowsException<ArgumentException>(() => service.ReadSetUpFile());
         }
 
         [TestMethod()]
@@ -33,7 +33,7 @@ namespace MartianRobot.Service.Tests
             _file = new Mock<IFile>();
             _file.Setup(f => f.GetFile()).Returns(list);
             service = new ManageRobotService(_file.Object);
-            Assert.ThrowsException<Exception>(() => service.ReadSetUpFile());
+            Assert.ThrowsException<ArgumentException>(() => service.ReadSetUpFile());
         }
     }
 }
